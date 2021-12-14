@@ -5,7 +5,7 @@ using System.Text;
 
 namespace tollCalculator
 {
-	class Route
+	public class Route
 	{
         [JsonProperty("toId")]
         public long ToId { get; set; }

@@ -11,8 +11,22 @@ namespace tollCalculator
 
 		public Trip(string start, string end)
 		{
-			Start = start;
-			End = end;
+			LocationsService service = new LocationsService();
+			service.LoadLocations();
+			if(service.ValidateStartEnd(start, end))
+			{
+				Start = start;
+				End = end;
+			}
+			else
+			{
+				throw new Exception("One of the location values are invalid");
+			}	
+		}
+
+		public void calculateTrip()
+		{
+
 		}
 	}
 }
