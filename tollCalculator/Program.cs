@@ -7,18 +7,17 @@ namespace tollCalculator
 	{
 		static void Main(string[] args)
 		{
-			//either use command line arguments or have user enter
-			//lets assume command line
 			try
 			{
 				Trip trip = new Trip(args[0], args[1]);
+				trip.calculateTrip();
 			}
 			catch(Exception e)
 			{
 				Console.WriteLine(e.Message);
+				Console.WriteLine(e.StackTrace);
 			}
 			
-
 			Console.WriteLine("Program has Ended");
 		}
 	}

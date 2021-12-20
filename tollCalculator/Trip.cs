@@ -8,10 +8,11 @@ namespace tollCalculator
 	{
 		public string Start { get; set; }
 		public string End { get; set; }
+		private LocationsService service { get; set; }
 
 		public Trip(string start, string end)
 		{
-			LocationsService service = new LocationsService();
+			service = new LocationsService();
 			service.LoadLocations();
 			if(service.ValidateStartEnd(start, end))
 			{
@@ -26,7 +27,13 @@ namespace tollCalculator
 
 		public void calculateTrip()
 		{
+			RoadMap map = new RoadMap(service.locations);
+			map.DetermineDirection(Start, End);
+			map.GetDistance(Start, End);
 
+			//get total distance between 2 points
+			//map.GetDistance(Start, End);
+			//needs to know where to stop
 		}
 	}
 }
