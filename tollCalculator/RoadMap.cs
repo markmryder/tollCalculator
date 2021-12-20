@@ -50,7 +50,7 @@ namespace tollCalculator
 					distance = Math.Round(distance, 4, MidpointRounding.AwayFromZero);
 					Console.WriteLine(distance);
 				}
-
+				Distance = distance;
 				Console.WriteLine($"Total distance travelled: {distance}");
 			}
 			else
@@ -70,7 +70,7 @@ namespace tollCalculator
 					distance = Math.Round(distance, 4, MidpointRounding.AwayFromZero);
 					Console.WriteLine(distance);
 				}
-
+				Distance = distance;
 				Console.WriteLine($"Total distance travelled: {distance}");
 			}
 		}

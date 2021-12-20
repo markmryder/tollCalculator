@@ -11,6 +11,7 @@ namespace tollCalculator
 			{
 				Trip trip = new Trip(args[0], args[1]);
 				trip.calculateTrip();
+				Console.WriteLine($"Total cost of trip is: ${trip.TotalCost}");
 			}
 			catch(Exception e)
 			{
