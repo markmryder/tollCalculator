@@ -27,8 +27,6 @@ namespace tollCalculator
 			Westbound = new List<Location>();
 			CreateEastbound(locations);
 			CreateWestbound(locations);
-			//DetermineDirection();
-			//GetDistance();
 		}
 
 		public void GetDistance(string start, string end)
