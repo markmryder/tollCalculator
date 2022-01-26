@@ -34,12 +34,10 @@ namespace tollCalculator
 				if (start.Equals(location.Name))
 				{
 					isStartValid = true;
-					Console.WriteLine("Start is good");
 				}
 				if (end.Equals(location.Name))
 				{
 					isEndValid = true;
-					Console.WriteLine("End is good");
 				}
 			}
 			return isEndValid && isStartValid;

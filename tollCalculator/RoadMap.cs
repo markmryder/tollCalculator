@@ -13,12 +13,8 @@ namespace tollCalculator
 		public List<Location> Exits { get; set; }
 		public double Distance { get; set; }
 
-
-
-		Dictionary<string, Location> _locations { get; set; }
 		public RoadMap(Dictionary<string,Location> locations)
 		{
-			_locations = locations;
 			Exits = new List<Location>();
 			CreateExits(locations);
 		}
@@ -37,7 +33,6 @@ namespace tollCalculator
 				{
 					distance += Exits[i].Routes[0].Distance;
 					distance = Math.Round(distance, 4, MidpointRounding.AwayFromZero);
-					Console.WriteLine(distance);
 				}
 				Distance = distance;
 			}
@@ -47,7 +42,6 @@ namespace tollCalculator
 				{
 					distance += Exits[i].Routes[1].Distance;
 					distance = Math.Round(distance, 4, MidpointRounding.AwayFromZero);
-					Console.WriteLine(distance);
 				}
 				Distance = distance;
 			}
