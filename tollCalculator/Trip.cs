@@ -31,7 +31,6 @@ namespace tollCalculator
 		public void calculateTrip()
 		{
 			RoadMap map = new RoadMap(service.locations);
-			//map.DetermineDirection(Start, End);
 			map.GetDistance(Start, End);
 			TotalCost = Math.Round(map.Distance * rate, 2, MidpointRounding.AwayFromZero);
 		}

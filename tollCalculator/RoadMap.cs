@@ -8,8 +8,6 @@ namespace tollCalculator
 	
 	public class RoadMap
 	{
-		public List<Location> Eastbound { get; set; }
-		public List<Location> Westbound { get; set; }
 		public List<Location> Exits { get; set; }
 		public double Distance { get; set; }
 
@@ -27,25 +25,25 @@ namespace tollCalculator
 			int endIndex = Exits.IndexOf(endLocation);
 			double distance = 0f;
 
-			if (startIndex < endIndex)
-			{
-				for (int i = startIndex; i < endIndex; i++)
-				{
-					distance += Exits[i].Routes[0].Distance;
-					distance = Math.Round(distance, 4, MidpointRounding.AwayFromZero);
-				}
-				Distance = distance;
-			}
-			else
-			{
-				for (int i = startIndex; i > endIndex; i--)
-				{
-					distance += Exits[i].Routes[1].Distance;
-					distance = Math.Round(distance, 4, MidpointRounding.AwayFromZero);
-				}
-				Distance = distance;
-			}
-			Console.WriteLine($"Total distance travelled: {distance}");
+            if (startIndex < endIndex)
+            {
+                for (int i = startIndex; i < endIndex; i++)
+                {
+                    distance += Exits[i].Routes[0].Distance;
+                    distance = Math.Round(distance, 4, MidpointRounding.AwayFromZero);
+                }
+                Distance = distance;
+            }
+            else
+            {
+                for (int i = startIndex; i > endIndex; i--)
+                {
+                    distance += Exits[i].Routes[1].Distance;
+                    distance = Math.Round(distance, 4, MidpointRounding.AwayFromZero);
+                }
+                Distance = distance;
+            }
+            Console.WriteLine($"Total distance travelled: {distance}");
 		}
 
 		private void CreateExits(Dictionary<string,Location> locations)
