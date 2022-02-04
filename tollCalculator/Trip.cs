@@ -11,6 +11,7 @@ namespace tollCalculator
 		private LocationsService service { get; set; }
 		private double rate { get; } = 0.25;
 		public double TotalCost { get; set; }
+		public RoadMap map { get; set; }
 
 		public Trip(string start, string end)
 		{
@@ -21,6 +22,8 @@ namespace tollCalculator
 			{
 				Start = start;
 				End = end;
+				map = new RoadMap(service.locations);
+				map.GetDistance(Start, End);
 			}
 			else
 			{
@@ -30,8 +33,6 @@ namespace tollCalculator
 
 		public void calculateTrip()
 		{
-			RoadMap map = new RoadMap(service.locations);
-			map.GetDistance(Start, End);
 			TotalCost = Math.Round(map.Distance * rate, 2, MidpointRounding.AwayFromZero);
 		}
 	}
