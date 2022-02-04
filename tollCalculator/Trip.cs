@@ -15,7 +15,8 @@ namespace tollCalculator
 		public Trip(string start, string end)
 		{
 			service = new LocationsService();
-			service.LoadLocations();
+			//Normally load from resources or some external path
+			service.LoadLocations("interchanges.json");
 			if(service.ValidateStartEnd(start, end))
 			{
 				Start = start;

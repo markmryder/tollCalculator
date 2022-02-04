@@ -17,12 +17,19 @@ namespace tollCalculator
 	{
 		public Dictionary<string, Location> locations { get; set; }
 
-		public void LoadLocations()
+		public void LoadLocations(string filepath)
 		{
-
-			StreamReader sr = new StreamReader("interchanges.json");
-			string json = sr.ReadToEnd();
-			locations = JsonConvert.DeserializeObject<Locations>(json).locations;
+            try
+            {
+				StreamReader sr = new StreamReader(filepath);
+				string json = sr.ReadToEnd();
+				locations = JsonConvert.DeserializeObject<Locations>(json).locations;
+			}
+			catch(Exception e)
+            {
+				throw new Exception("Error reading file");
+            }
+			
 		}
 
 		public bool ValidateStartEnd(string start, string end)

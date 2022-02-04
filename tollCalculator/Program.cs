@@ -7,9 +7,22 @@ namespace tollCalculator
 	{
 		static void Main(string[] args)
 		{
+			string start, stop;
+			if(args.Length == 0)
+            {
+				Console.WriteLine("Enter starting point: ");
+				start = Console.ReadLine();
+				Console.WriteLine("Enter end point: ");
+				stop = Console.ReadLine();
+            }
+            else
+            {
+				start = args[0];
+				stop = args[1];
+            }
 			try
 			{
-				Trip trip = new Trip(args[0], args[1]);
+				Trip trip = new Trip(start, stop);
 				trip.calculateTrip();
 				Console.WriteLine($"Total cost of trip is: ${trip.TotalCost}");
 			}
