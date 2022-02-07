@@ -11,12 +11,10 @@ namespace tollCalculatorTests
 
         [SetUp]
         public void Setup()
-        {
-            
+        {       
             LocationsService service = new LocationsService();
             service.LoadLocations("interchanges.json");
             map = new RoadMap(service.locations);
-
         }
 
         [Test]

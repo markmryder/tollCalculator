@@ -26,14 +26,7 @@ namespace tollCalculatorTests
 		public void LoadLocationsFromFileFails()
         {
 			LocationsService service = new LocationsService();
-            try
-            {
-				service.LoadLocations("wrong file path");
-            }
-            catch(Exception e)
-            {
-				Assert.AreEqual("Error reading file", e.Message);
-            }
+			Assert.Throws<Exception>(() => service.LoadLocations("wrong file path"));
         }
 
 		[Test]

@@ -11,28 +11,12 @@ namespace tollCalculatorTests
         [Test]
         public void CalculateTripBadStart()
         {
-            
-            try
-            {
-                Trip trip = new Trip("Nowhere", "Brock Road");
-            }
-            catch (Exception e)
-            {
-                Assert.AreEqual(e.Message, "One of the location values are invalid");
-            }
+            Assert.Throws<Exception>(() => new Trip("Nowhere","Brock Road"));
         }
         [Test]
         public void CalculateTripBadEnd()
         {
-            
-            try
-            {
-                Trip trip = new Trip("Jane Street", "Bad string");
-            }
-            catch(Exception e)
-            {
-                Assert.AreEqual(e.Message, "One of the location values are invalid");
-            }
+            Assert.Throws<Exception>(() => new Trip("Brock Road", "Nowhere"));
         }
         [Test]
         public void CalculateTripGoodData()
