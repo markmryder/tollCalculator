@@ -43,7 +43,7 @@ namespace tollCalculator
                 }
                 Distance = distance;
             }
-            Console.WriteLine($"Total distance travelled: {distance}");
+
 		}
 
 		private void CreateExits(Dictionary<string,Location> locations)

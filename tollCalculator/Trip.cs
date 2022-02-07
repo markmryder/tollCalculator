@@ -12,6 +12,7 @@ namespace tollCalculator
 		private double rate { get; } = 0.25;
 		public double TotalCost { get; set; }
 		public RoadMap map { get; set; }
+		public double Distance { get; set; }
 
 		public Trip(string start, string end)
 		{
@@ -34,6 +35,7 @@ namespace tollCalculator
 		public void calculateTrip()
 		{
 			TotalCost = Math.Round(map.Distance * rate, 2, MidpointRounding.AwayFromZero);
+			Distance = Math.Round(map.Distance, 2, MidpointRounding.AwayFromZero);
 		}
 	}
 }

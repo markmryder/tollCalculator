@@ -25,6 +25,7 @@ namespace tollCalculator
 				Trip trip = new Trip(start, stop);
 				trip.calculateTrip();
 				Console.WriteLine($"Total cost of trip is: ${trip.TotalCost}");
+				Console.WriteLine($"Total distance travelled is: {trip.Distance} Km");
 			}
 			catch(Exception e)
 			{
